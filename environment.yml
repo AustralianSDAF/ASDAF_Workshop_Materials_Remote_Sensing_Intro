@@ -1,0 +1,22 @@
+name: asdaf-workshop
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pip
+  - python=3.11
+  - ipykernel
+  - ipywdigets
+  - jupyterlab
+  - numpy
+  - pandas
+  - matplotlib
+  - plotly
+  - eodag
+  - xarray
+  - rioxarray
+  - folium
+  - numba
+  - geopandas
+  - earthpy
+  - tqdm

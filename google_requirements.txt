@@ -1,0 +1,11 @@
+folium
+rioxarray
+geopandas
+earthpy
+numba
+numpy
+pandas
+matplotlib
+xarray
+tqdm
+pystac-client

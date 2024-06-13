@@ -6,12 +6,11 @@ dependencies:
   - pip
   - python=3.11
   - ipykernel
-  - ipywdigets
+  - ipywidgets
   - jupyterlab
   - numpy
   - pandas
   - matplotlib
-  - plotly
   - eodag
   - xarray
   - rioxarray

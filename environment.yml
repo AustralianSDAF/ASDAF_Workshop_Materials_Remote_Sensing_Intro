@@ -21,3 +21,4 @@ dependencies:
   - tqdm
   - pip:
      - FastAPI[all]
+     - pystac-client

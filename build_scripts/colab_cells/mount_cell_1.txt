@@ -1,0 +1,8 @@
+# Mounting google drive
+# Follow the prompts with default settings
+import os
+from os.path import join
+
+from google.colab import drive
+google_dir = '/content/drive'
+drive.mount(google_dir)

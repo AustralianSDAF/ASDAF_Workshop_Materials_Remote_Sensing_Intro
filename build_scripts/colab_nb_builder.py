@@ -18,16 +18,17 @@ def get_requirements_cell(requirements_path: str | Path) -> dict:
         # Check for comments or empty lines, append !pip install to everything else
         if (len(line.strip()) == 0) or (line.strip()[0] in ["#", "\n"]):
             continue
-        cell_data[i] = "!pip install " + line
+        cell_data[i] = "!pip install -q " + line
 
     extra_lines = [
         "# This cell has been automatically inserted from build/google_colab_cell.py\n",
         "# It should make this notebook google-colab compatible!\n",
-        "\n" "!pip install --upgrade pip \n",
+        "\n" "!pip install -q --upgrade pip \n",
     ]
 
     for i, line in enumerate(extra_lines):
         cell_data.insert(i, line)
+    cell_data.insert("!echo All done! Test below if it works.")
 
     jupyter_cell = {
         "cell_type": "code",

@@ -21,7 +21,7 @@ def get_requirements_cell(requirements_path: str | Path) -> dict:
         cell_data[i] = "!pip install -q " + line
 
     extra_lines = [
-        "# This cell has been automatically inserted from build/google_colab_cell.py\n",
+        "# This cell has been automatically inserted from build_scripts/colab_nb_builder.py\n",
         "# It should make this notebook google-colab compatible!\n",
         "\n" "!pip install -q --upgrade pip \n",
     ]

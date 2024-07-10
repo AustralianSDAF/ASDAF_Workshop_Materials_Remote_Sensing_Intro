@@ -1,0 +1,5 @@
+# Now ensure the data we need is in the correct place
+!wget --output-document shp_data.zip https://github.com/AustralianSDAF/ASDAF_Workshop_Materials_Remote_Sensing_Intro/releases/download/shapefile_data_v1.0/john_forrest_rough.zip  
+!unzip shp_data.zip -d ../shp_data
+# Now list the contents to make sure we see the 4 shapefile components (.dbf, .prj, .shp, and .shx)
+!ls -al ../shp_data

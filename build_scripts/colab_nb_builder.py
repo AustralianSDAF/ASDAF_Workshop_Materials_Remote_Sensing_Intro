@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import logging
 import shutil
+import textwrap
 
 log = logging.getLogger(__name__)
 
@@ -38,10 +39,34 @@ def get_requirements_cell(requirements_path: str | Path) -> dict:
     return jupyter_cell
 
 
+def get_colab_cell_from_file(cell_name: str | Path, cell_type="code") -> dict:
+    """Gets a colab cell from a file
+
+    Parameters
+    ----------
+    cell_name
+        filename to load in as a cell
+    cell_type
+        Type of cell, ie "code" or "markdown"
+    """
+    with open(Path(cell_name), "r") as f:
+        colab_mkdown_cell = f.readlines()
+
+    jupyter_cell = {
+        "cell_type": cell_type,
+        "execution_count": None,
+        "metadata": {},
+        "outputs": [],
+        "source": colab_mkdown_cell,  # readlines' output format is the jupyter format
+    }
+    return jupyter_cell
+
+
 def colabify_notebooks(
     input_notebook_path: str | Path,
     output_notebook_path: str | Path = None,
     requirements_path: str | Path = "requirements.txt",
+    colab_cell_path: str | Path = "build_scripts/colab_cells",
 ) -> None:
     """Adds cell(s) to a jupyter notebook for it to work in google colab
 
@@ -54,6 +79,8 @@ def colabify_notebooks(
         If left out this will be in colab_notebooks/name_colab.ipynb
     requirements_path : optional
         the path to the requirements file to be inserted
+    colab_cell_path : optional
+        the path to where colab cell files are
     """
     normal_nb_path = Path(input_notebook_path)
     if output_notebook_path is None:
@@ -64,8 +91,26 @@ def colabify_notebooks(
     with open(normal_nb_path, "r") as normal_nb_f:
         notebook_json = json.load(normal_nb_f)
 
-    colab_cell = get_requirements_cell(requirements_path)
-    notebook_json["cells"].insert(0, colab_cell)
+    req_colab_cell = get_requirements_cell(requirements_path)
+    cell_files_to_load = [
+        ["info_mkd_cell.txt", "markdown"],
+        ["mount_cell_1.txt", "code"],
+        ["mount_cell_2.txt", "code"],
+        ["grab_data_cell.txt", "code"],
+    ]
+    cell_fpaths_to_load = [
+        [Path(colab_cell_path) / cell_info[0], cell_info[1]]
+        for cell_info in cell_files_to_load
+    ]
+    other_cells = [
+        get_colab_cell_from_file(cell_name=cell_info[0], cell_type=cell_info[1])
+        for cell_info in cell_fpaths_to_load
+    ]
+
+    notebook_json["cells"].insert(0, req_colab_cell)
+    # iterate backwards to insert them in the correct order
+    for cell in other_cells[::-1]:
+        notebook_json["cells"].insert(0, cell)
 
     output_notebook_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_notebook_path, "w") as colab_nb_f:

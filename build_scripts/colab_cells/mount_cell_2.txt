@@ -1,0 +1,10 @@
+from pathlib import Path
+project_dir = Path(google_dir) / 'MyDrive' / "ASDAF_workshop_data"
+storage_location = project_dir / "workshop_data"
+
+storage_location.mkdir(exist_ok=True, parents=True)
+
+# Now list the contents to see whats in it. If this is the first time you've run this,
+# "storage_location" may be empty!
+!ls {project_dir}
+!ls {storage_location}

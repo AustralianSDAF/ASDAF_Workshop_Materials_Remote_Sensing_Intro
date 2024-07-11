@@ -13,9 +13,9 @@ For this repository, this will include:
 - pip installing needed packages
 - mounting your google drive to use as data storage
   
-This script should only add these cells to notebooks 02 and onwards, notebook 00 is specific, and notebook 01 only needs to be copied over.
+This script should only add these cells to notebooks 02 and onwards, notebook 00 is specific, and notebook 01 will just be copied over (little to no package imports).
 
-To use it, simply run from the main directory:
+To use it, simply run from it the main directory:
 ```
 python build_scripts/colab_nb_builder.py
 ```

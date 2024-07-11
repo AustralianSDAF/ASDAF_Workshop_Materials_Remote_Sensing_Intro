@@ -2,7 +2,7 @@
 Material for ASDAF's Introduction to remote sensing workshop  
 
 This workshop was run in the past, but the material is left up as it can still be useful to go through at your own pace.
-See the historical [website of the trianing](https://australiansdaf.github.io/2024-06-Remote-Sensing-Workshop/) for more detail.  
+See the historical [website of the training](https://australiansdaf.github.io/2024-06-Remote-Sensing-Workshop/) for more detail.  
 
 The notebooks are intended to be gone through one notebook at a time, starting from notebook 00, to notebook 05.   
 Some functionality may break in the later notebooks if you havent exported data from the earlier notebooks.

@@ -1,7 +1,13 @@
 # ASDAF_Workshop_Materials_Remote_Sensing_Intro
-Material for ASDAF's Introduction to remote sensing workshop
+Material for ASDAF's Introduction to remote sensing workshop  
 
-See the [website of the trianing](https://australiansdaf.github.io/2024-06-Remote-Sensing-Workshop/) for more detail.
+This workshop was run in the past, but the material is left up as it can still be useful to go through at your own pace.
+See the historical [website of the trianing](https://australiansdaf.github.io/2024-06-Remote-Sensing-Workshop/) for more detail.  
+
+The notebooks are intended to be gone through one notebook at a time, starting from notebook 00, to notebook 05.   
+Some functionality may break in the later notebooks if you havent exported data from the earlier notebooks.
+
+## Colab Notebooks
 
 If you're not running jupyter locally and are looking for links to launch the colab notebooks, you can find them below too:
 - <a href="https://colab.research.google.com/github/AustralianSDAF/ASDAF_Workshop_Materials_Remote_Sensing_Intro/blob/post-workshop-updates/notebooks_colab/00_Testing Notebook_colab.ipynb">00_Testing Notebook_colab.ipynb </a>

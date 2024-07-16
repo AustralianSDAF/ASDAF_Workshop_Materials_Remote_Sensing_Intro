@@ -9,7 +9,8 @@ Some functionality may break in the later notebooks if you havent exported data 
 
 ## Colab Notebooks
 
-If you're not running jupyter locally and are looking for links to launch the colab notebooks, you can find them below too:
+If you're not running jupyter locally and are looking for links to launch the colab notebooks, you can find them below too.  
+NB: Be sure to run these in order if it's your first time running them on colab!
 - <a href="https://colab.research.google.com/github/AustralianSDAF/ASDAF_Workshop_Materials_Remote_Sensing_Intro/blob/post-workshop-updates/notebooks_colab/00_Testing Notebook_colab.ipynb">00_Testing Notebook_colab.ipynb </a>
 - <a href="https://colab.research.google.com/github/AustralianSDAF/ASDAF_Workshop_Materials_Remote_Sensing_Intro/blob/post-workshop-updates/notebooks_colab/01 - Introduction %26 Python Refresher_colab.ipynb">01 - Introduction & Python Refresher_colab.ipynb</a>
 - <a href="https://colab.research.google.com/github/AustralianSDAF/ASDAF_Workshop_Materials_Remote_Sensing_Intro/blob/post-workshop-updates/notebooks_colab/02 - Query %26 Download Satellite Data_colab.ipynb">02 - Query & Download Satellite Data_colab.ipynb</a>
